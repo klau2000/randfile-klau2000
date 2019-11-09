@@ -28,11 +28,14 @@ int main() {
   printf("Writing numbers to file...\n\n");
   write(fd,buff, sizeof(buff));
   printf("Reading numbers from file...\n\n");
+
+  printf("Verification that written values were the same:\n");
   int buff2[11];
   read(fd, &buff2, sizeof(buff2));
-  for(int i = 0; i < 10; i++){
-    printf("random %d: %d\n", i, buff2[i]);
+  for(int j = 0; j < 10; j++){
+    printf("random %d: %d\n", i, buff2[j]);
   }
-  printf("Verification that written values were the same:\n");
-
+  if(errno){ //see if any error
+    printf("Error number: %d\n", errno);
+  }
 }

@@ -29,7 +29,7 @@ int main() {
   write(fd,buff, sizeof(buff));
   printf("Reading numbers from file...\n\n");
   int buff2[11];
-  read(fd, &buff2, sizeof(buff));
+  read(fd, &buff2, sizeof(buff2));
   for(int i = 0; i < 10; i++){
     printf("random %d: %d\n", i, buff2[i]);
   }

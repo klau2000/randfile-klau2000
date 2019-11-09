@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <fcntl.h>
+#include <unistd.h>
 #include <errno.h>
 
 int randnum(){
-  int fd = open("/dev/random", 0_RDONLY);
+  int fd = open("/dev/random", O_RDONLY);
   int buff;
   read(fd, &buff, sizeof(int));
 
@@ -15,7 +15,7 @@ int randnum(){
   return buff;
 }
 int main() {
-  int fd = open("randnum.c", 0_RDWR | 0_CREAT, 644);
+  int fd = open("randnum.c", O_RDWR | O_CREAT, 644);
   int buff[11];
   printf("Generating random numbers:\n");
   for(int i = 0; i < 10; i++){
@@ -29,5 +29,5 @@ int main() {
   write(fd,buff, sizeof(buff));
   printf("Reading numbers from file...\n\n");
   printf("Verification that written values were the same:\n");
-  
+
 }

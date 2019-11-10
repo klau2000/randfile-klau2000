@@ -26,14 +26,14 @@ int main() {
     printf("Error number: %d\n", errno);
   }
   printf("Writing numbers to file...\n\n");
-  write(fd,buff, sizeof(buff));
+  write(fd,&buff, sizeof(buff));
   printf("Reading numbers from file...\n\n");
 
   printf("Verification that written values were the same:\n");
   int buff2[11];
   read(fd, &buff2, sizeof(buff2));
   for(int j = 0; j < 10; j++){
-    printf("random %d: %d\n", i, buff2[j]);
+    printf("random %d: %d\n", j, buff2[j]);
   }
   if(errno){ //see if any error
     printf("Error number: %d\n", errno);

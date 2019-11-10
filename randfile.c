@@ -26,7 +26,7 @@ int main() {
     printf("Error number: %d\n", errno);
   }
   printf("Writing numbers to file...\n\n");
-  write(fd,&buff, sizeof(buff));
+  write(fd,buff, sizeof(buff));
   printf("Reading numbers from file...\n\n");
 
   printf("Verification that written values were the same:\n");

@@ -34,6 +34,8 @@ int main() {
   printf("Verification that written values were the same:\n");
   int buff2[11];
   read(fd, &buff2, sizeof(buff2));
+  printf("%d:\n", sizeof(buff2));
+
   for(int j = 0; j < 10; j++){
     printf("random %d: %d\n", j, buff2[j]);
   }

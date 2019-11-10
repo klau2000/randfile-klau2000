@@ -17,7 +17,7 @@ int randnum(){
 }
 
 int main() {
-  int fd = open("randnum.c", O_RDWR | O_CREAT, 666);
+  int fd = open("randnum.txt", O_RDWR | O_CREAT, 666);
   int buff[11];
   printf("Generating random numbers:\n");
   for(int i = 0; i < 10; i++){

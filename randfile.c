@@ -33,6 +33,7 @@ int main() {
 
   printf("Verification that written values were the same:\n");
   int buff2[11];
+  fd = open("randnum.txt", O_RDONLY);
   read(fd, &buff2, sizeof(buff2));
   printf("%ld:\n", sizeof(buff2));
 

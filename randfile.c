@@ -12,6 +12,7 @@ int randnum(){
   if(errno){ //see if any error
     printf("Error number: %d\n", errno);
   }
+  close(fd);
   return buff;
 }
 int main() {
@@ -38,4 +39,5 @@ int main() {
   if(errno){ //see if any error
     printf("Error number: %d\n", errno);
   }
+  close(fd);
 }
